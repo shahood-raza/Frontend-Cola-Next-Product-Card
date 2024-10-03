@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+*{
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #151515;
+    --clr: rgba(174,0,0,0.8);
+}
+.card{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    filter :drop-shadow( 0 0 30px rgba(174, 0, 0, 0.8));
+}
+.card:hover{
+    width: 600px;
+    transition-delay: 0.5s;
+    filter :drop-shadow( 0 0 30px rgba(174, 0, 0, 0.8));
+    box-shadow: 0 0 20px rgba(174,0,0,0.8);
+    cursor: pointer;
+}
+.card .round{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .round::before{
+    position: absolute;
+    top: 30;
+    left: 2;
+    right: 2;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: #191919;
+    border: 8px solid var(--clr);
+    transition: 0.5s, background 0.5s ;
+    transition-delay:0.75s ,1s ;
+}
+
+.card:hover .round::before{
+    transition-delay: 0.5s;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: var(--clr);
+}
+.card .round .logo{
+    position: relative;
+    width: 250px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+.card:hover .round .logo{
+    transform: scale(0);
+    transition-delay: 0s;
+}
+.card .bottle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0) rotate(315deg);
+    height: 300px;
+    transition: 0.5s ease-in-out;
+}
+.card:hover .bottle{
+    transition-delay: 0.75s;
+    top: 25%;
+    left: 75%;
+    height: 530px;
+    transform: translate(-50%,-50%) scale(1) rotate(15deg);
+}
+.card .content{
+    position: absolute;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 20px;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+}
+.card:hover .content{
+    transition-delay:0.75s ;
+    opacity: 1;
+    visibility: visible;
+    left: 20px;
+}
+.card .content h2{
+    color: #fff;
+    font-size: 2.5em;
+    line-height: 1em;
+    filter: drop-shadow(0 0 15px var(--clr));
+}
+.card .content p{
+    color: #fff;
+}
+.card .content a {
+    position: relative;
+    color: #fff;
+    background-color: var(--clr);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    color:#fff;
+    font-size: 14px;
+}
